@@ -57,11 +57,26 @@ set(libcxx_sources
     src/variant.cpp
     src/vector.cpp
     src/verbose_abort.cpp
+    src/abi/abort_message.cpp 
+    src/abi/cxa_aux_runtime.cpp 
+    src/abi/cxa_default_handlers.cpp 
+    src/abi/cxa_exception_storage.cpp 
+    src/abi/cxa_guard.cpp 
+    src/abi/cxa_handlers.cpp 
+    src/abi/cxa_noexception.cpp 
+    src/abi/cxa_thread_atexit.cpp 
+    src/abi/cxa_vector.cpp 
+    src/abi/cxa_virtual.cpp 
+    src/abi/stdlib_exception.cpp 
+    src/abi/stdlib_new_delete.cpp 
+    src/abi/stdlib_stdexcept.cpp 
+    src/abi/stdlib_typeinfo.cpp 
 )
 
+include_directories(src)
 include_directories(include)
 include_directories(include/abi)
 
 add_library(libcxx STATIC ${libcxx_sources})
 
-target_include_directories(libcxx PUBLIC include)
+include_directories(include)
